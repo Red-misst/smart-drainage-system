@@ -1,0 +1,168 @@
+body {
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sensor-card, .connection-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.sensor-card:hover, .connection-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background-color: #3498db;
+  color: white;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+.water-level-container {
+  height: 200px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ecf0f1;
+  border: 2px solid #7f8c8d;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.water-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, #3498db, #2980b9);
+  transition: height 1s;
+}
+
+.water-level.disconnected {
+  background: #ccc;
+  height: 0% !important;
+}
+
+.sensor-reading {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.reading-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.temp-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e74c3c"><path d="M13 15.28V5a1 1 0 0 0-2 0v10.28a2 2 0 1 0 2 0zM12 18a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/><path d="M12 2a4 4 0 0 0-4 4v8.36a6 6 0 1 0 8 0V6a4 4 0 0 0-4-4zm2 12.36a4 4 0 1 1-4 0V6a2 2 0 0 1 4 0z"/></svg>');
+}
+
+.humidity-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233498db"><path d="M17.66 8L12 2.35 6.34 8A8 8 0 0 0 12 20a8 8 0 0 0 5.66-12zm-1.41 1.41a6 6 0 0 1-8.48 8.48A6 6 0 0 1 16.24 9.4z"/></svg>');
+}
+
+#distance-value, #sensor-id {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#status-indicator {
+  text-align: center;
+}
+
+#last-update {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .water-level-container {
+    width: 100%;
+    height: 150px;
+  }
+  
+  .sensor-reading {
+    margin: 10px 0;
+  }
+  
+  .reading-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Status colors */
+.bg-critical {
+  background-color: #dc3545;
+}
+
+/* Map styles */
+#drainage-map {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.map-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.map-card:hover {
+  transform: translateY(-5px);
+}
+
+.map-legend {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.legend-item {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+.color-box.normal {
+  background-color: #3498db;
+}
+
+.color-box.warning {
+  background-color: #f39c12;
+}
+
+.color-box.danger {
+  background-color: #e74c3c;
+}
+
+.color-box.flood-zone {
+  background-color: rgba(231, 76, 60, 0.3);
+}
+
+@media (max-width: 768px) {
+  #drainage-map {
+    height: 300px;
+  }
+  
+  .map-legend {
+    font-size: 0.9rem;
+  }
+}
