@@ -12,7 +12,7 @@ const port = 3000;
 
 // Middleware and static files
 app.use(express.json());
-app.use(cors());
+app.use(cors()); 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
