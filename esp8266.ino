@@ -5,11 +5,11 @@
 using namespace websockets2_generic;
 
 // WiFi credentials
-const char* ssid = "riecelle";
-const char* password = "rie123456";
+const char* ssid = "wifi name";
+const char* password = "password";
 
 // WebSocket server details
-const char* ws_server = "192.168.137.1"; // Replace with your WebSocket server IP
+const char* ws_server = "000.00.000.00"; // Replace with your WebSocket server IP
 const uint16_t ws_port = 3000;
 
 WebsocketsClient client;
